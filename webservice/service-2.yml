@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: webservice-2
+  labels:
+    application: node-redis-example-5
+    component: webservice-2
+spec:
+  type: NodePort
+  selector:
+    application: node-redis-example-5
+    component: webservice-2
+  ports:
+  - protocol: TCP
+    port: 3000
+    targetPort: 3000
+    nodePort: 30002

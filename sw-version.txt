@@ -1,0 +1,13 @@
+This project was done using: 
+
+Windows 10 Pro 10.0.19042 N/D build 19042
+WSL 2 with Ubuntu 18.04 
+Visual Studio Code 1.51.1
+Docker Desktop with Docker Engine v19.03.13 and Kubernetes v1.19.3
+Redis 6.0.9 
+Node.js v12.19.0
+Express.js 4.17.1
+Redis.js 3.0.2
+Redlock 4.2.0
+Postman 7.34.0
+log-timestamp 0.3.0

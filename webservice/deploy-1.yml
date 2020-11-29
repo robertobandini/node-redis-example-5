@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    application: node-redis-example-5
+    component: webservice-1
+  name: webservice-1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      application: node-redis-example-5
+      component: webservice-1
+  strategy:
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        application: node-redis-example-5
+        component: webservice-1
+        redeploy: '1'
+    spec:
+      containers:
+        - name: webservice-1
+          image: webservice:1.0.0
+          env:
+          - name: REDIS_SERVER_IP
+            value: "redis-server"
+          ports:
+          - name: webservice-1
+            containerPort: 3000
+            protocol: TCP
